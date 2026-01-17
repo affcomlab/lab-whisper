@@ -23,8 +23,16 @@ It is built on top of the public `jmgirard/audio-whisper` image but adds a secur
 
 ## Setup & Launch
 
-### 1. Start the Environment
-Open your terminal (PowerShell) inside this folder and run:
+### 1. Download the Repository
+Open a terminal (PowerShell) and run:
+
+```powershell
+git clone https://github.com/affcomlab/lab-whisper.git
+cd lab-whisper
+```
+
+### 2. Start the Environment
+Open your terminal (PowerShell) **inside the `lab-whisper` folder** and run:
 
 ```powershell
 docker compose run --rm whisper-lab
@@ -33,7 +41,7 @@ docker compose run --rm whisper-lab
 * The first time you run this, it will take a moment to build the lab image (`lab-whisper:latest`).
 * Subsequent runs will be instant.
 
-### 2. Connect to Lab Drives
+### 3. Connect to Lab Drives
 Once R launches, you will see a message: `Loaded AffCom Lab Utils`. Run the connection function:
 
 ```r
