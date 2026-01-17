@@ -1,0 +1,25 @@
+services:
+  whisper-lab:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: lab-whisper:latest
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    volumes:
+      - ./models:/models
+
+    stdin_open: true
+    tty: true
+    command: ["R"]
+    
