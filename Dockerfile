@@ -10,4 +10,4 @@ RUN mkdir -p /mnt/projects
 RUN Rscript -e "install.packages('getPass', repos='https://cloud.r-project.org')"
 
 COPY lab_utils.R /usr/local/lib/R/site-library/lab_utils.R
-RUN echo "source('/usr/local/lib/R/site-library/lab_utils.R')" >> /usr/local/lib/R/etc/Rprofile.site
+RUN R_HOME=$(R RHOME) && echo "source('/usr/local/lib/R/site-library/lab_utils.R')" >> ${R_HOME}/etc/Rprofile.site

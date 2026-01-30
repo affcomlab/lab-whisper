@@ -3,7 +3,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    image: lab-whisper:latest
+    image: jmgirard/lab-whisper:latest
     cap_add:
       - SYS_ADMIN
       - DAC_READ_SEARCH
