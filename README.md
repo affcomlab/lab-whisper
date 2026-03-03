@@ -2,7 +2,7 @@
 
 This is the **AffCom Lab Edition** of the GPU-accelerated Whisper environment.
 
-It is built on top of the public `jmgirard/audio-whisper` image but adds a secure "Lab Layer" that allows you to connect directly to the AffCom **Datasets** and **Projects** network shares from inside the container.
+It is built on top of the public [jmgirard/audio-whisper](https://github.com/jmgirard/audio-whisper) image but adds a secure "Lab Layer" that allows you to connect directly to the AffCom **Datasets** and **Projects** network shares from inside the container.
 
 ### Features
 * **GPU Acceleration:** Runs OpenAI's Whisper model on the lab machine's NVIDIA GPU.
@@ -98,4 +98,5 @@ write.csv(transcript, "/mnt/projects/MyStudy/Wave1/subject_001_transcript.csv")
 
 ### "Fatal error: you must specify '--save'..."
 * You likely ran `docker-compose up`.
+
 * Always use the run command: `docker compose run --rm whisper-lab`
