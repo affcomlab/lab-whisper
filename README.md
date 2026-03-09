@@ -11,15 +11,11 @@ It is built on top of the public [jmgirard/audio-whisper](https://github.com/jmg
     * `/mnt/datasets`: Mounted **Read-Only** (You cannot accidentally delete raw data).
     * `/mnt/projects`: Mounted **Read-Write** (Save your transcripts here).
 
----
-
 ## Prerequisites
 
 1.  **Lab Machine:** This image is designed to run on AffCom lab workstations.
 2.  **Docker Desktop:** Installed and running.
 3.  **NVIDIA Drivers:** Ensure the machine's drivers are up to date.
-
----
 
 ## Setup & Launch
 
@@ -55,8 +51,6 @@ If successful, you will see:
 > ✅ Mounted: /mnt/datasets (Read-Only)
 > ✅ Mounted: /mnt/projects (Read-Write)
 
----
-
 ## Usage Example
 
 You can analyze audio files directly from the server using the pre-downloaded models.
@@ -64,6 +58,9 @@ You can analyze audio files directly from the server using the pre-downloaded mo
 ```r
 library(audio.whisper)
 library(openac)
+
+# 0. Set up progress bar handler
+handlers("cli")
 
 # 1. Login (if you haven't already)
 connect_lab_drives()
@@ -83,8 +80,6 @@ transcript <- predict(model, newdata = audio_path)
 write.csv(transcript, "/mnt/projects/MyStudy/Wave1/subject_001_transcript.csv")
 ```
 
----
-
 ## Troubleshooting
 
 ### "Connection failed" or "Host is down"
@@ -100,3 +95,4 @@ write.csv(transcript, "/mnt/projects/MyStudy/Wave1/subject_001_transcript.csv")
 * You likely ran `docker-compose up`.
 
 * Always use the run command: `docker compose run --rm whisper-lab`
+
