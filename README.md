@@ -67,7 +67,7 @@ connect_lab_drives()
 
 # 2. Load Whisper Model from Server
 # We use the models stored in datasets/whisper so you don't have to download them.
-# Available: "ggml-base.bin", "ggml-small.bin", "ggml-medium.bin", "ggml-large-v3.bin"
+# Available: "ggml-base.bin", "ggml-small.bin", "ggml-medium.bin", "ggml-large-v3.bin", "ggml-large-v3-turbo.bin"
 model_path <- "/mnt/datasets/whisper/ggml-base.bin"
 model <- whisper(model_path, use_gpu = TRUE)
 
@@ -95,4 +95,5 @@ write.csv(transcript, "/mnt/projects/MyStudy/Wave1/subject_001_transcript.csv")
 * You likely ran `docker-compose up`.
 
 * Always use the run command: `docker compose run --rm whisper-lab`
+
 
